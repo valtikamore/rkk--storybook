@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 
 
-function UncontrolledOnOff() {
+export function UncontrolledOnOff() {
     const [on,setOn] = useState(true)
 
     let styles = {
@@ -49,5 +49,3 @@ function UncontrolledOnOff() {
         </div>
     )
 }
-
-export default UncontrolledOnOff
