@@ -1,12 +1,12 @@
 import React from 'react';
-import { UncontrolledRating } from './uncontrolledRating';
+import { UncontrolledRating , RatingValueType} from './uncontrolledRating';
 import {action} from "@storybook/addon-actions";
 
-
-export default {
-    title: 'UncontrolledRating ',
-    component: UncontrolledRating,
+export  default {
+    title:'UncontrolledRating',
+    component:UncontrolledRating,
 }
+
 const callback = action('rating changed')
 
 export const EmptyRating = () => <UncontrolledRating defaultValue={0} onChange={callback}/>

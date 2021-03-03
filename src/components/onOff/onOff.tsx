@@ -7,13 +7,10 @@ type onOffPropsType ={
 }
 
 export function OnOff(props:onOffPropsType) {
-
-
     let styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-
     }
     let OnStyle = {
         width: '30px',

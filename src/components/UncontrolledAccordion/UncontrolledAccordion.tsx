@@ -4,7 +4,6 @@ import React, {useState} from "react";
 type AccordionPropsType = {
     titleValue: string,
 }
-
 export function UncontrolledAccordion(props: AccordionPropsType) {
     let [collapsed, setCollapsed] = useState(false)
     const toogle = () => setCollapsed(!collapsed)
@@ -15,16 +14,10 @@ export function UncontrolledAccordion(props: AccordionPropsType) {
         </div>
     )
 }
-
-
-
-
-
 type AccordionTitlePropsType = {
     title: string
     onClick: () => void
 }
-
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log('rendering AccTitle')
     return (
@@ -32,7 +25,6 @@ function AccordionTitle(props: AccordionTitlePropsType) {
         </h3>
     )
 }
-
 function AccordionBody() {
     console.log('rendering AccBody')
     return (
@@ -42,7 +34,6 @@ function AccordionBody() {
             <li>3</li>
 
         </ul>)
-
 }
 
 
