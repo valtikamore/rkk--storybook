@@ -6,16 +6,15 @@ type ItemType = {
     title: string
     value: any
 }
-
 type SelectPropsType = {
     value?: any
     onChange: (value: any) => void
     items: ItemType[]
 }
-
 export function Select(props: SelectPropsType) {
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
+
     const selectedItem = props.items.find(i => i.value === props.value)
     const hoveredItem = props.items.find(i => i.value === hoveredElementValue)
 
@@ -23,10 +22,10 @@ export function Select(props: SelectPropsType) {
         setHoveredElementValue(props.value)
     }, [props.value])
 
-    const toogle = () => setActive(!active)
+    const toggle = () => setActive(!active)
     const onItemClick = (value: any) => {
         props.onChange(value)
-        toogle()
+        toggle()
     }
     const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
@@ -51,15 +50,14 @@ export function Select(props: SelectPropsType) {
     }
 
 
-    return (<div className={styles.select} onKeyUp={onKeyUp}  tabIndex={0}>
-        <span className={styles.main} onClick={toogle}>{selectedItem && selectedItem.title}</span>
-
-        {
-            active &&
+    return (
+        <div className={styles.select} onKeyUp={onKeyUp}  tabIndex={0}>
+        <span className={styles.main} onClick={toggle}>
+            {selectedItem && selectedItem.title}
+        </span>
+            {active &&
             <div className={styles.items}>
                 {props.items.map(i => <div
-
-
                     key={i.value}
                     onMouseEnter={() => {
                         setHoveredElementValue(i.value)

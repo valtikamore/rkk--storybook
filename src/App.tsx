@@ -15,18 +15,18 @@ function App() {
     return (
         <div className={'App'}>
             <Rating value={ratingValue} clickOnStar={setRatingValue}/>
-            <Accordion
-                titleValue={'Accordion title 1 '}
-                collapsed={accordionCollapsed}
-                onChange={() => {
-                    setAccordionCollapsed(!accordionCollapsed)
-                }}/>
+            {/*<Accordion onClick={} items={}*/}
+            {/*    titleValue={'Accordion title 1 '}*/}
+            {/*    collapsed={accordionCollapsed}*/}
+            {/*    onChange={() => {*/}
+            {/*        setAccordionCollapsed(!accordionCollapsed)*/}
+            {/*    }}/>*/}
             <OnOff
                 on={on}
                 onChange={setOn}/>
-            <UncontrolledOnOff /> {on.toString()}
+            {/*<UncontrolledOnOff /> {on.toString()}*/}
             <UncontrolledAccordion titleValue={'bla'}/>
-            <UncontrolledRating />
+            {/*<UncontrolledRating />*/}
 
         </div>
     )
