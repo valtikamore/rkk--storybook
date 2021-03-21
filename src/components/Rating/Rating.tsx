@@ -1,4 +1,5 @@
 import React from "react";
+import {OnOffSuper} from "../onOff/onOff";
 
 
 
@@ -8,8 +9,8 @@ type RatingPropsType = {
     value:RatingValueType
     clickOnStar:(value:RatingValueType) => void
 }
-
-export function Rating(props: RatingPropsType) {
+export const Rating = React.memo(RatingSuper)
+export function RatingSuper(props: RatingPropsType) {
     return (<div>
         <Star selected={props.value > 0} clickOnStar={props.clickOnStar} value={1}/>
         <Star selected={props.value > 1} clickOnStar={props.clickOnStar} value={2}/>

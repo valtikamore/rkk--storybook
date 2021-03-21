@@ -1,12 +1,13 @@
 import React  from "react";
+import {AccordionSuper} from "../accordion/Acordion";
 
 
 type onOffPropsType ={
     on:boolean
     onChange:(on:boolean) => void
 }
-
-export function OnOff(props:onOffPropsType) {
+export const OnOff = React.memo(OnOffSuper)
+export function OnOffSuper(props:onOffPropsType) {
     let styles = {
         display: 'flex',
         alignItems: 'center',

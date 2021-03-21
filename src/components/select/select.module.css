@@ -6,6 +6,11 @@
     min-height: 20px;
     min-width: 50px;
 }
+.select:focus {
+    display: inline-block;
+    min-height: 20px;
+    min-width: 50px;
+}
 .items {
     padding: 4px;
     position: absolute;

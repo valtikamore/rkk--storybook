@@ -1,4 +1,5 @@
 import React from "react";
+import {SelectSuper} from "../select/select";
 
 type itemType = {
     title:string
@@ -12,8 +13,8 @@ export type AccordionPropsType = {
     items:itemType[]
     onClick:(value:any) => void
 }
-
-export function Accordion(props: AccordionPropsType) {
+export const Accordion = React.memo(AccordionSuper)
+export function AccordionSuper(props: AccordionPropsType) {
 
     return (
         <div>

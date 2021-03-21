@@ -11,17 +11,15 @@ type SelectPropsType = {
     onChange: (value: any) => void
     items: ItemType[]
 }
-export function Select(props: SelectPropsType) {
+export const Select = React.memo(SelectSuper)
+export function SelectSuper(props: SelectPropsType) {
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
-
     const selectedItem = props.items.find(i => i.value === props.value)
     const hoveredItem = props.items.find(i => i.value === hoveredElementValue)
-
     useEffect(() => {
         setHoveredElementValue(props.value)
     }, [props.value])
-
     const toggle = () => setActive(!active)
     const onItemClick = (value: any) => {
         props.onChange(value)
@@ -52,24 +50,22 @@ export function Select(props: SelectPropsType) {
 
     return (
         <div className={styles.select} onKeyUp={onKeyUp}  tabIndex={0}>
-        <span className={styles.main} onClick={toggle}>
-            {selectedItem && selectedItem.title}
-        </span>
-            {active &&
-            <div className={styles.items}>
-                {props.items.map(i => <div
-                    key={i.value}
-                    onMouseEnter={() => {
-                        setHoveredElementValue(i.value)
-                    }}
-                    onClick={() => onItemClick(i.value)}
-                    className={styles.item + ' ' + (hoveredItem === i ? styles.selected : '')}
-                >{i.title}</div>)}
-            </div>
-        }
-
-
-    </div>)
+            <span className={styles.main} onClick={toggle}>
+                {selectedItem && selectedItem.title}
+            </span>
+                {active &&
+                <div className={styles.items}>
+                    {props.items.map(i => <div
+                        key={i.value}
+                        onMouseEnter={() => {
+                            setHoveredElementValue(i.value)
+                        }}
+                        onClick={() => onItemClick(i.value)}
+                        className={styles.item + ' ' + (hoveredItem === i ? styles.selected : '')}
+                    >{i.title}</div>)}
+                </div>
+            }
+        </div>)
 }
 
 
