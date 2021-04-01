@@ -1,6 +1,5 @@
 import {reducer, StateType, TOOGLE_COLLASED} from "./reducer"
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
+
 
 test('collapsed should be true' , () => {
 

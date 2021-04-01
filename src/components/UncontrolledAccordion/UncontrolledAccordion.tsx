@@ -6,9 +6,7 @@ type AccordionPropsType = {
     titleValue: string,
 }
 export function UncontrolledAccordion(props: AccordionPropsType) {
-    // let [collapsed, setCollapsed] = useState(false)
     let [state, dispatch] = useReducer(reducer,{collapsed:false})
-    // const toogle = () => setCollapsed(!collapsed)
     const toogle = () => {
         debugger
         dispatch({type: TOOGLE_COLLASED})
