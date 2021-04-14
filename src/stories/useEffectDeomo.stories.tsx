@@ -27,7 +27,7 @@ export const SimpleExample = () => {
 }
 
 
-export const SetTimeoutExample = () => {
+export const ClockFirst = () => {
     const [seconds, setSeconds] = useState<number>()
     const [minuts, setMinuts] = useState<number>()
     const [hours, setHours] = useState<number>()
@@ -47,7 +47,7 @@ export const SetTimeoutExample = () => {
     )
 }
 
-export const Clocks = () => {
+export const ClockSecond = () => {
     const [clocks, setClocks] = useState<Date>(new Date())
 
     useEffect(() => {
