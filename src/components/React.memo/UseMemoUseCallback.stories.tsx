@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {Select} from "../components/select/select";
+import {Select} from "../select/select";
 
 export default {
     title: 'useMemo'

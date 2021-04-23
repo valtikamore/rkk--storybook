@@ -1,4 +1,3 @@
-import {useEffect, useState} from "react";
 import {Clock} from "./clock";
 
 
@@ -7,6 +6,10 @@ export default {
     component:Clock
 }
 
-export const BaseExample = () => {
-    return <Clock/>
+export const BaseExampleDigital = () => {
+    return <Clock mode={'digital'}/>
+}
+
+export const BaseExampleAlalog = () => {
+    return <Clock mode={'analog'}/>
 }
